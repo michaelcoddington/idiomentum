@@ -11,7 +11,7 @@ fun main(args: Array<String>) {
     val dbSession = orient.open("test-1", "root", "admin")
     val start = System.currentTimeMillis()
     //val query = "TRAVERSE inE(), outE(), inV(), outV from (SELECT * from Product)"
-    val query = "SELECT FROM Product"
+    val query = "SELECT FROM V"
     val results = dbSession.query(query)
     println("Got results $results in ${System.currentTimeMillis() - start} ms")
     results.forEach { result ->
