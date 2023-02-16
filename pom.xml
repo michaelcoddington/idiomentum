@@ -4,17 +4,16 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>idiomentum</artifactId>
+    <name>idiomixer</name>
+    <artifactId>idiomixer</artifactId>
     <modules>
-        <module>idiomentum-server</module>
-        <module>idiomentum-client</module>
-        <module>idiomentum-api</module>
+        <module>idiomixer-server</module>
+        <module>idiomixer-client</module>
+        <module>idiomixer-api</module>
     </modules>
-    <groupId>org.idiomentum</groupId>
+    <groupId>org.idiomixer</groupId>
     <version>1.0.0-SNAPSHOT</version>
     <packaging>pom</packaging>
-
-    <name>idiomentum</name>
 
     <properties>
         <java.version>17</java.version>

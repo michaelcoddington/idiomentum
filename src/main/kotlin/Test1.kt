@@ -9,6 +9,20 @@ fun main(args: Array<String>) {
     val orient = OrientDB("remote:localhost", OrientDBConfig.defaultConfig())
     println("Got db $orient")
     val dbSession = orient.open("test-1", "root", "admin")
+
+    println(dbSession.metadata.schema.classes)
+
+    // creates a new vertex class
+    val assetClass = dbSession.metadata.schema.getClass("Asset")
+    if (assetClass == null) {
+        val vClass = dbSession.metadata.schema.getClass("V")
+        dbSession.metadata.schema.createClass("Asset", vClass)
+    } else {
+        println("Asset class already exists")
+    }
+
+
+
     val start = System.currentTimeMillis()
     //val query = "TRAVERSE inE(), outE(), inV(), outV from (SELECT * from Product)"
     val query = "SELECT FROM V"
@@ -21,11 +35,11 @@ fun main(args: Array<String>) {
             val v = result.vertex
             println(v)
             val contribs = v.get().getEdges(ODirection.OUT, "HAS_CONTRIBUTOR")
-            contribs.forEach( { contributorLink ->
+            contribs.forEach { contributorLink ->
                 println("got link $contributorLink")
                 val contributor = contributorLink.to
                 println("got contributor $contributor")
-            })
+            }
         }
 
     }
