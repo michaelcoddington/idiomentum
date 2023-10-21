@@ -1,2 +1,2 @@
-# idiomentum
-The core Idiomentum project (client, server, and API)
+# Idiomixer
+The core Idiomixer project (client, server, and API)
